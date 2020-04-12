@@ -1,0 +1,59 @@
+audio {
+    position: fixed;
+    left: 5%;
+    bottom: 5%;
+    width: 55%;
+    opacity: 0.6;
+    box-shadow: 0.2em 0.2em 0.1em black, -0.2em -0.2em 0.1em black;
+    border-radius: 24px;
+}
+
+body {
+  /* Background image is centered vertically and horizontally at all times */
+  background-position: center center;
+
+  /* Background image doesn't tile */
+  background-repeat: no-repeat;
+
+  /* Background image is fixed in the viewport so that it doesn't move when
+     the content's height is greater than the image's height */
+  background-attachment: fixed;
+
+  /* This is what makes the background image rescale based
+     on the container's size */
+  background-size: cover;
+
+  /* Set a background color that will be displayed
+     while the background image is loading */
+  background-color: steelblue;
+}
+
+#derechos {
+    width: 500px;
+    margin-top: 100px;
+    margin-left: 100px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#derechos a {
+    text-shadow: 0.2em 0.2em 0.1em black;
+}
+
+#derechos p {
+    color: white;
+    font-weight: bold;
+    text-shadow: 0.2em 0.2em 0.1em black;
+}
+
+#grupo {
+    position: fixed;
+    left: 63%;
+    bottom: 5%;
+    width: 255px;
+    height: 54px;
+    opacity: 0.6;
+    box-shadow: 0.2em 0.2em 0.1em black, -0.2em -0.2em 0.1em black;
+    border-radius: 24px;
+    padding-left: 24px;
+    background-color: whitesmoke;
+}
