@@ -12,11 +12,9 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}">
 
     <style>
-        
         body {
             background-image: url({{ bing }});
         }
-        
     </style>
 
     <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
@@ -39,9 +37,9 @@
             <a class="btn btn-light" href="{{ url_for('home', index=i+1, idx=idx) }}">
                 <img src=" {{ url_for('static', filename='img/shuffle.png') }}" width="44" height="44" id="shuffle">
             </a>
-            <a class="btn btn-light" href="{{ url_for('folder', index=i, idx=idx) }}">
+            <button class="btn btn-light" id="folder">
                 <img src="{{ url_for('static', filename='img/folder.png') }}" width="44" height="44">
-            </a>
+            </button>
             <a class="btn btn-light" href="{{ url_for('reload', index=i, idx=idx) }}">
                 <img src=" {{ url_for('static', filename='img/reload.png') }}" width="44" height="44">
             </a>

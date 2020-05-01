@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, url_for, redirect
+from flask import Flask, render_template, request, url_for, redirect, jsonify
 from requests import get
 from os import listdir, system
 from random import shuffle
@@ -35,18 +35,18 @@ def zero():
     return redirect(url_for('home', index=0, idx=0))
 
 
+@app.route('/folder')
+def folder():
+    system('thunar static/audio/')
+    return jsonify({"respuesta": "Carpeta Abierta"})
+
+
 @app.route('/song/<index>/image/<idx>')
 def home(index, idx):
     index = int(index)
     title = musicdir[index]
     imagen = consultar(idx)
     return render_template('index.html', titulo=title, idx=imagen[0], bing=imagen[1], derechos=imagen[2], i=index)
-
-
-@app.route('/folder/<index>/<idx>')
-def folder(index, idx):
-    system('thunar static/audio/')
-    return redirect(url_for('home', index=index, idx=idx))
 
 
 @app.route('/reload/<index>/<idx>')
