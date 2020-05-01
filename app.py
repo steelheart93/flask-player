@@ -12,16 +12,22 @@ app = Flask(__name__)
 def consultar(idx):
     url = "http://www.bing.com/HPImageArchive.aspx"
     args = {'format': 'js', 'n': '1', 'idx': idx}
-    response = get(url, params=args)
 
-    if response.status_code == 200:
-        response_json = response.json()
-        images = response_json['images']
-        urlbase = images[0]['urlbase'] + "_1366x768.jpg"
-        bing = "https://www.bing.com" + urlbase
-        derechos = images[0]['copyright']
+    try:
+        response = get(url, params=args)
 
-        return idx, bing, derechos
+        if response.status_code == 200:
+            response_json = response.json()
+            images = response_json['images']
+            urlbase = images[0]['urlbase'] + "_1366x768.jpg"
+            bing = "https://www.bing.com" + urlbase
+            derechos = images[0]['copyright']
+
+            return idx, bing, derechos
+        else:
+            return [0, "/static/img/placeholder.png", "No Image Available"]
+    except:
+        return [0, "/static/img/placeholder.png", "No Image Available"]
 
 
 @app.route('/')
